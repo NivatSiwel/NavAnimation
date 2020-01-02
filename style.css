@@ -1,0 +1,99 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(206, 125, 18);
+}
+
+.content {
+    width: 100%;
+    height: 100vh;
+    display: none;
+}
+
+.ham {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    height: 60px;
+    width: 60px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.ham > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 8px;
+    width: 60px;
+    background-color: black;
+    border-radius: 6px;
+    transform: translate(-50%,-50%);
+
+    transition: all .3s;
+    transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+    transition-delay: .3s;
+}
+
+.slice-top {
+    top: 25% !important;
+}
+
+.slice-mid {
+
+}
+
+.slice-bot {
+    top: 75% !important;
+
+}
+
+.ham-active > .slice-mid {
+    transform: translate(-50%,-50%) scale(0.1);
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+
+.ham-active > .slice-top {
+    top: 50% !important;
+    transform: translate(-50%,-50%) rotate(45deg);
+    /* transform-origin: top left; */
+}
+
+.ham-active > .slice-bot {
+    top: 50% !important;
+    transform: translate(-50%,-50%) rotate(-45deg);
+    /* transform-origin: bottom left; */
+}
+
+.nav-bg {
+    position: fixed;
+    top: 28px;
+    right: 28px;
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+    background-color: blue;
+    z-index: 900;
+    cursor: pointer;
+    transition: all .5s ease-in;
+}
+
+.nav-active {
+    transform: scale(100);
+    cursor: default;
+}
+
+
+.nav {
+    border: 2px solid black;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
