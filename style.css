@@ -35,7 +35,6 @@ body {
     background-color: black;
     border-radius: 6px;
     transform: translate(-50%,-50%);
-
     transition: all .3s;
     transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
     transition-delay: .3s;
@@ -51,7 +50,6 @@ body {
 
 .slice-bot {
     top: 75% !important;
-
 }
 
 .ham-active > .slice-mid {
@@ -90,10 +88,12 @@ body {
     cursor: default;
 }
 
-
 .nav {
     border: 2px solid black;
-    height: 100%;
-    width: 100%;
-    position: fixed;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style-type: none;
+    font-size: 100px;
 }
