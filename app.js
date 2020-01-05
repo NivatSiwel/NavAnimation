@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     var ham = document.getElementById("ham");
     var bg = document.getElementById("nav-bg");
+    var content = document.getElementById("content");
     var navActive = false;
     
     ham.addEventListener("click", function() {
@@ -8,16 +9,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if(navActive === true) {
             ham.classList.add("ham-active");
-            // timmer delay for bg animation
+            bg.classList.add("nav-active");
+            content.style.display = "block";
             setTimeout(function(){
-                bg.classList.add("nav-active");
-            }, 500);
+                content.classList.add("content-active");
+            }, 100);
         } else if(navActive === false) {
             bg.classList.remove("nav-active");
-            // timmer delay for bg animation
+            ham.classList.remove("ham-active");
+            content.classList.remove("content-active");
             setTimeout(function(){
-                ham.classList.remove("ham-active");
-            }, 300);
+                content.style.display = "none";
+            }, 2000);
         }
     });
 });
+
